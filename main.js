@@ -45,27 +45,6 @@
 		oldFront = qs('.img-old-front'),
 		newSide = qs('.img-new-side'),
 		newFront = qs('.img-new-front'),
-
-
-		//tire images
-		/*oldImageFront = qs('#tireFrontImg'),
-		oldImageSide = qs('#tireSideImg'),
-		oldImageDisc = qs('#tireDiscImg'),
-
-		newImageFront = qs('#tireFrontImgNew'),
-		newImageSide = qs('#tireSideImgNew'),
-		newImageDisc = qs('#tireDiscImgNew'),
-
-		//image descriptions
-		oldDiameterDescr = qs('.old-diameter'),
-		newDiameterDescr = qs('.new-diameter'),
-
-		oldSideHeightDescr = qs('.old-side-height'),
-		newSideHeightDescr = qs('.new-side-height'),
-
-		oldWidthDescr = qs('.old-width'),
-		newWidthDescr = qs('.new-width'),*/
-
 		dms = document.querySelectorAll('.dimension'),
 
 		//speed
@@ -73,12 +52,7 @@
 
 		
 		deviceSpeedVal = qs('#device-value'),
-		/*deviceSpeedArrow = qs('#device-speed'), //speedometer.childNodes[5].childNodes[3]
-		realSpeedArrow = qs('#real-speed'), //speedometer.childNodes[7].childNodes[3]
-		deviceSpeedTxt = qs('#device-text'), //speedometer.childNodes[1]
-		realSpeedTxt = qs('#real-text'), //speedometer.childNodes[3]
-		deviceSpeedVal = qs('#device-value'), //speedometer.childNodes[9].childNodes[3]
-		realSpeedVal = qs('#real-value'), //speedometer.childNodes[11]*/
+	
 		up = qs('#up'),
 		down = qs('#down'),
 		
@@ -88,16 +62,6 @@
 		inchBtn = qs('#inches'),
 		calcBtn = qs('#calc_button'),
 		switcher = qs('#switch-bg'),
-	
-		/*mm = ' мм',
-		inchQuote = '"',
-		measurement = mm,*/
-
-		//arrays to store all values with measurement
-		//mmProps = [],
-		//inchProps = [],
-
-
 
 		tableMethods = {
 
@@ -298,8 +262,8 @@
 
 			getArrowsDeg: function() {
 
-				this.initialDeg = this.initialSpeed * 2 - 120;
-				this.realDeg = this.realSpeed * 2 - 120;
+				this.initialDeg = this.initialSpeed - 90;
+				this.realDeg = this.realSpeed - 90;
 
 				if (this.initialDeg < -90) {
 					this.initialDeg = -90;
@@ -360,12 +324,35 @@
 				})
 			},
 
+			/*pressFunc: function(target) {
+				target === up ? deviceSpeedVal.value++ : 
+					deviceSpeedVal.value--;
+				tableMethods.setSpeedParams();
+			},*/
+
 			speedBtnClick: function(target) {
-				target.addEventListener('click', function() {
-					target === up ? deviceSpeedVal.value++ : 
-						deviceSpeedVal.value--;
-					tableMethods.setSpeedParams();
-				})
+
+				target.addEventListener('mousedown', function longPress() {
+					let start = Date.now();
+					window.requestAnimationFrame(function press() {
+						let now = Date.now();
+						let timePassed = now - start;
+
+						target === up ? deviceSpeedVal.value++ : 
+							deviceSpeedVal.value--;
+						tableMethods.setSpeedParams();
+						if (timePassed > 100) timePassed = 100;
+
+						if (timePassed < 100) {
+							requestAnimationFrame(longPress)
+						}
+						
+						
+					})
+
+					
+					
+				});
 			},
 
 			speedValChange: function() {
@@ -376,25 +363,6 @@
 
 		}
 
-
-	
-
-	/*deviceSpeedVal.addEventListener('change', function() {
-		tableMethods.setSpeedParams();
-	});
-
-	up.addEventListener('click', function() {
-		deviceSpeedVal.value++;
-		tableMethods.setSpeedParams();
-	});
-
-	down.addEventListener('click', function() {
-		deviceSpeedVal.value--;
-		tableMethods.setSpeedParams();
-	});*/
-
-	//tableMethods.upClick;
-	//tableMethods.upClick;
 	calcBtn.addEventListener('click', 
 		tableMethods.calc);
 	
@@ -409,10 +377,3 @@
 		tableMethods.speedValChange();
 	});
 })();
-/*TASKS
-* 1) 
-* 2) 
-* 3) 
-* 4) 
-* 5) 
-*/

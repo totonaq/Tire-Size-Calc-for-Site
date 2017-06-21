@@ -18,13 +18,23 @@
 		
 		<!--<div class="table-wrap">-->
 		<div class="param-wrap">
+		
+		
 			<table id="selections">
 				<tr>
+					<td>
+						
+					</td>
 					<th colspan="2">Старый размер</th>
 					<th colspan="2">Новый размер</th>
 				</tr>
 				<tr>
-					<th>Ширина протектора шины (P)</th>
+					<td rowspan="3">
+						<div class="hint_b">
+							<img src="images/hint_b.png" alt="">
+						</div>
+					</td>
+					<th>1. Ширина протектора шины (P)</th>
 					<td>
 						<select name="w" id="tire_width_old">
 							<option value="135">135</option>
@@ -56,7 +66,7 @@
 							<option value="395">395</option>
 						</select>
 					</td>
-					<th>Ширина протектора шины (P)</th>
+					<th>1. Ширина протектора шины (P)</th>
 					<td>
 						<select name="w" id="tire_width_new">
 							<option value="135">135</option>
@@ -90,7 +100,8 @@
 					</td>
 				</tr>
 				<tr>
-					<th>Высота профиля (H) в %</th>
+					
+					<th>2. Высота профиля (H) в %</th>
 					<td>	
 						<select name="h" id="tire_height_old">
 							<option value="25">25</option>
@@ -111,7 +122,7 @@
 							<option value="100">100</option>
 						</select>
 					</td>
-					<th>Высота профиля (H) в %</th>
+					<th>2. Высота профиля (H) в %</th>
 					<td>
 						<select name="h" id="tire_height_new">
 							<option value="25">25</option>
@@ -135,7 +146,8 @@
 				</tr>
 
 				<tr>
-					<th>Диаметр диска (R) в мм/дюймах</th>
+
+					<th>3. Диаметр диска (R) в дюймах</th>
 					<td>
 						<select name="d" id="tire_diameter_old">
 							<option value="12">12</option>
@@ -154,7 +166,7 @@
 							<option value="24">24</option>
 						</select>
 					</td>
-					<th>Диаметр диска (R) в мм/дюймах</th>
+					<th>3. Диаметр диска (R) в дюймах</th>
 					<td>
 						<select name="d" id="tire_diameter_new">
 							<option value="12">12</option>
@@ -175,7 +187,10 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="4"><button id="calc_button">Сравнить</button></td>
+					<!--<td colspan="3">
+						
+					</td>
+					<td colspan="2"></td>-->
 				</tr>
 			</table>
 			<div class="param-hint">
@@ -183,18 +198,19 @@
 					<p>D - диаметр шины</p>
 					<p>R - диаметр диска</p>
 					<p>H - профиль шины</p>
-					<p>P - Ширина протектора шины</p>
+					<p>P - ширина протектора шины</p>
 				</div>
 				<div class="param-hint-img">
 					<img src="images/hint_a.png" alt="">
 				</div>
 			</div>
+			<button id="calc_button">Рассчитать</button>
 		</div>
 			
 
 			
-					
-		<div class="result-wrap">
+		<div class="hidden-area">
+			<div class="result-wrap">
 
 			<div class="buttons-table-wrap">
 				<div class="buttons">
@@ -207,36 +223,36 @@
 				<table id="results">
 					<tr>
 						<th>Показатель</th>
-						<th>Старая</th>
-						<th>Новая</th>
+						<th>Старое значение</th>
+						<th>Новое значение</th>
 						<th>Разница</th>
 					</tr>
 					<tr id="diameter">
-						<th>Диаметр</th>
-						<td class="measure old"></td>
-						<td class="measure new"></td>
-						<td class="measure diff"></td>
+						<th>Диаметр колеса (D), мм/дюймы</th>
+						<td class="old"></td>
+						<td class="new"></td>
+						<td class="diff"></td>
 					</tr>
 					<tr id="width">
-						<th>Ширина</th>
-						<td class="measure old"></td>
-						<td class="measure new"></td>
-						<td class="measure diff"></td>
+						<th>Ширина протектора шины (P), мм/дюймы</th>
+						<td class="old"></td>
+						<td class="new"></td>
+						<td class="diff"></td>
 					</tr>
 					<tr id="circumference">
-						<th>Длина окружности</th>
-						<td class="measure old"></td>
-						<td class="measure new"></td>
-						<td class="measure diff"></td>
+						<th>Длина окружности колеса, мм/дюймы</th>
+						<td class="old"></td>
+						<td class="new"></td>
+						<td class="diff"></td>
 					</tr>
 					<tr id="sidewall_height">
-						<th>Высота профиля</th>
-						<td class="measure old"></td>
-						<td class="measure new"></td>
-						<td class="measure diff"></td>
+						<th>Высота профиля (H), мм/дюймы</th>
+						<td class="old"></td>
+						<td class="new"></td>
+						<td class="diff"></td>
 					</tr>
 					<tr id="rev">
-						<th>Оборотов на км</th>
+						<th>Оборотов на км, кол-во</th>
 						<td class="old"></td>
 						<td class="new"></td>
 						<td class="diff"></td>
@@ -244,8 +260,11 @@
 					<tr id="clearence">
 						<th colspan="3">Изменение клиренса</th>
 						
-						<td class="measure diff"></td>
+						<td class="diff"></td>
 						
+					</tr>
+					<tr>
+						<td colspan="4" id="result-message"></td>
 					</tr>
 						
 				</table>
@@ -253,39 +272,47 @@
 			
 			<div class="img-wrap">
 				<div class="img-old">
+				<h2>Старая</h2>
 					<div class="img-old-side">
-						<img src="images/rubber_side.png" alt="">
-						<img class="disc" src="images/disc.png" alt="">
-						<div class="dimension old-diameter">
-							<div class="descr-v"></div>
-						</div>
-						<div class="dimension old-side-height">
-							<div class="descr-h"></div>
+						<div class="rubber_side">
+							<div class="disc">
+							</div>
+							<div class="dimension old-diameter">
+								<div class="descr-v"></div>
+							</div>
+							<div class="dimension old-side-height">
+								<div class="descr-h"></div>
+							</div>
 						</div>
 					</div>
 					<div class="img-old-front">
-						<img src="images/rubber_front.png" alt="">
-						<div class="dimension old-width">
-							<div class="descr-h"></div>
+						<div class="rubber_front">
+							<div class="dimension old-width">
+								<div class="descr-h"></div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="img-new">
+				<h2>Новая</h2>
 					<div class="img-new-side">
-						<img src="images/rubber_side.png" alt="">
-						<img class="disc" src="images/disc.png" alt="">
-						<div class="dimension new-diameter">
-							<div class="descr-v"></div>
-						</div>
-						<div class="dimension new-side-height">
-							<div class="descr-h"></div>
+						<div class="rubber_side">
+							<div class="disc"></div>
+							<div class="dimension new-diameter">
+								<div class="descr-v"></div>
+							</div>
+							<div class="dimension new-side-height">
+								<div class="descr-h"></div>
+							</div>
 						</div>
 					</div>
 					<div class="img-new-front">
-						<img src="images/rubber_front.png" alt="">
-						<div class="dimension new-width">
-							<div class="descr-h"></div>
+						<div class="rubber_front">
+							<div class="dimension new-width">
+								<div class="descr-h"></div>
+							</div>
 						</div>
+						
 					</div>
 				</div>
 		</div>
@@ -317,6 +344,8 @@
 				<p class="speed-text" id="real-value"></p>
 			</div>
 		</div>
+		</div>		
+		
 			
 			
 	</div>

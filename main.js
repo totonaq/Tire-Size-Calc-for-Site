@@ -64,11 +64,11 @@
 			diamTxt: 'Диаметр колеса',
 			sideHeightTxt: 'Высота профиля',
 			widthTxt: 'Ширина протектора',
-			maxSpeed: 180,
+			maxSpeed: 120,
 			minSpeed: 0,
 			defaultSpeed: 60,
-			initSpeedTxt: 'Фактические показания спидометра, км/ч',
-			realSpeedTxt: 'Реальная скорость, км/ч',
+			//initSpeedTxt: 'Фактические показания спидометра, км/ч',
+			//realSpeedTxt: 'Реальная скорость, км/ч',
 
 			fillTable: function(selector, oldValue, newValue) {
 				let diff, sign, img = '', msr = measurement;
@@ -282,8 +282,8 @@
 
 			setSpeedDiff: function() {
 
-				speedometer.childNodes[1].innerText = this.initSpeedTxt;
-				speedometer.childNodes[3].innerText = this.realSpeedTxt;
+				//speedometer.childNodes[1].innerText = this.initSpeedTxt;
+				//speedometer.childNodes[3].innerText = this.realSpeedTxt;
 
 				speedometer.childNodes[9].childNodes[3].value = this.initialSpeed;
 				speedometer.childNodes[11].innerText = this.realSpeed;
@@ -291,13 +291,13 @@
 
 			getArrowsDeg: function() {
 
-				this.initialDeg = this.initialSpeed - 90;
-				this.realDeg = this.realSpeed - 90;
+				this.initialDeg = this.initialSpeed * 2 - 120;
+				this.realDeg = this.realSpeed * 2 - 120;
 
-				if (this.realDeg < -90) {
-					this.realDeg = -90;
-				} else if (this.realDeg > 90) {
-					this.realDeg = 90;
+				if (this.realDeg < -120) {
+					this.realDeg = -120;
+				} else if (this.realDeg > 120) {
+					this.realDeg = 120;
 				}
 			},
 
@@ -384,7 +384,7 @@
 				tableMethods.mmProps, '0', mm);
 		});
 		calcBtn.addEventListener('click', function() {
-			hiddenArea.style.display = 'block';
+			
 			tableMethods.calc();
 		});
 	});

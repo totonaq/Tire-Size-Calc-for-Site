@@ -48,7 +48,7 @@ img {
 	flex-flow: row wrap;
 	margin-bottom: 20px;
 	overflow: hidden;
-	width: 50%;
+	width: 57%;
 }
 .logo-wrap-img {
 	width: 100px;
@@ -69,14 +69,17 @@ img {
 }
 .param-wrap {
 	/*border-radius: 10px;*/
+	-ms-align-items: flex-start;
+	align-items: flex-start;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
 	flex-flow: row wrap;
-	/*overflow: hidden;*/
-	width: 100%;
+	/*overflow: hidden;
+	margin-right: 3%;*/
+	width: 55%;
 }
 #selections {
 	border-radius: 10px 10px 0 0;
@@ -97,11 +100,11 @@ img {
 #selections select {
 	/*border: 2px solid #00a8a8;
 	border-radius: 10px;*/
-	font-size: 1.6rem;
+	font-size: 1rem;
 }
 #selections tr:last-child td {
 	
-	padding: 30px 0 0;
+	padding: 0;
 	
 }
 #selections tr:last-child td:last-child {
@@ -118,11 +121,11 @@ img {
 	border: none;
 	color: #fff;
 }
-/*#selections tr:first-child td:first-child {
-	border: none;
-	border-radius: 10px 0 0 0;
+#selections tr:first-child th:first-child {
+	border-right: 1px solid #bebebe;
+	
 }
-#selections tr:first-child th:last-child {
+/*#selections tr:first-child th:last-child {
 	border-left: 1px solid #bebebe;
 	border-radius: 0 10px 0 0;
 }*/
@@ -148,19 +151,21 @@ img {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
+	justify-content: flex-start;
 	flex-flow: row wrap;
-	margin-top: 30px;
+	margin-top: 20px;
 	padding: 25px;
-	width: 60%;
+	width: 100%;
+	
 }
 .param-hint-text {
-	width: 50%;
+	width: 60%;
 }
 .param-hint-text p {
-	font-size: 1.4rem;
+	font-size: 1rem;
 }
 .param-hint-img {
-	width: 40%;
+	width: 30%;
 }
 .param-hint-img img {
 	width: 100%;
@@ -170,7 +175,7 @@ button#calc_button {
 	border-radius: 10px;
 	
 	font-size: 1.6rem;
-	margin: auto;
+	margin: 30px 0 0 0;
 	padding: 10px 20px;
 	/*transition: all .2s ease-in-out;*/
 	width: 30%;
@@ -183,9 +188,7 @@ button#calc_button:active {
 	-webkit-box-shadow: 0px 0px 0px #555;
 	box-shadow: 0px 0px 0px #555;
 }
-.hidden-area {
-	display: none;
-}
+
 .result-wrap {
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -193,11 +196,11 @@ button#calc_button:active {
 	display: -o-flex;
 	display: flex;
 	flex-flow: row wrap;
-	margin-top: 50px;
+	/*margin-top: 50px;*/
 	width: 100%;
 }
 .buttons-table-wrap {
-	width: 60%;
+	width: 100%;
 }
 .buttons {
 	margin-left:auto;
@@ -255,16 +258,16 @@ button#calc_button:active {
 }
 
 
-table {
+.calc-wrap table {
 	border-collapse: collapse;
-	font-size: 1.4rem;
+	font-size: 1rem;
 	width: 100%;
 }
 
 td, th {
 	border: 1px solid #BEBEBE;
 	
-	padding: 8px 10px;
+	padding: 12px 10px;
 	text-align: left;
 	/*width: 25%;*/
 }
@@ -275,7 +278,14 @@ th {
 	height: 80px;
 	text-align: center;
 }*/
-
+.result-area {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: row wrap;
+}
 
 #results {
 	border-radius: 0 0 10px 10px;
@@ -332,7 +342,10 @@ th {
 .img-wrap {
 	width: 50%;
 }
-
+.img-side {
+	margin: 0 0 0 35px;
+	width: 40%;
+}
 .img-wrap {
 	background:
     -webkit-linear-gradient(#e4b8d4, transparent 1px),
@@ -345,19 +358,29 @@ th {
     linear-gradient(to right, #e4b8d4, transparent 1px);
   	background-size: 15px 15px;
   	background-position: center center;
-  	margin: 0 0 0 35px;
-	width: 36%;
+  	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	/*border-radius: 10px 10px 0 0;
+	-webkit-box-shadow: 5px 5px 20px #555;
+	box-shadow: 5px 5px 20px #555;*/
+  	box-sizing: border-box;
+  	padding: 2%;
+	width: 100%;
 }
 .img-wrap h2 {
+	font-size: 1.2rem;
 	margin: 0 0 45px 0;
 	padding: 0;
 	width: 100%;
+}
+.img-wrap .img-new h2 {
+	margin-bottom: 0;
 }
 .table-wrap {
 	margin-right: 4%;
 }
 .img-old {
-	margin-bottom: 25px;
+	margin-bottom: 55px;
 	/*padding-top: 50px;*/
 }
 .img-old,
@@ -394,13 +417,16 @@ th {
 	display: flex;
 	justify-content: center;
 	position: relative;
+	transition: all .5s ease-in-out
 }
 .disc {
 	background: url(images/disc.png) center center/ cover no-repeat;
+	transition: all .5s ease-in-out
 }
 .rubber_front {
 	background: url(images/rubber_front.png) center center/ 100% 100% no-repeat;
 	position: relative;
+	transition: all .5s ease-in-out
 }
 .dimension {
 	border: 1px solid #000;
@@ -458,26 +484,34 @@ th {
 	display: -o-flex;
 	display: flex;
 	flex-flow: row wrap;
-	margin-top: 50px;
+	margin-top: 15px;
+	width: 100%;
 }
 .speed-wrap {
-
+	
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
 	flex-flow: row wrap;
-	width: 50%;
+	justify-content: space-around;
+	
+	padding: 15px;
+	width: 100%;
 }
 .speed-wrap .speed-text {
-	font-size: 1.2rem;
+	font-size: 1rem;
+	padding: 0 0 10px 0;
 	text-align: center;
 	width: 50%;
 }
 .speedometer {
+	border-radius: 50%;
+	-webkit-box-shadow: 5px 5px 20px #555;
+	box-shadow: 5px 5px 20px #555;
 	position: relative;
-	width: 50%;
+	width: 45%;
 }
 
 .speedometer img:first-child {
@@ -485,21 +519,21 @@ th {
 	width: 100%;
 }
 .speedometer img:last-of-type {
-	left: 46.5%;
+	left: 47.5%;
 	position: absolute;
 	transform-origin: 50% 95.7%;
 	transition: all .5s ease-in-out;
-	top: 13%;
+	top: 7%;
 	width: 5%;
 }
 #device-value {
 	background-color: #f1f1f1;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	text-align: center;
 	width: 70px;
 }
 #real-value {
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 button#up, button#down {
 	background-color: transparent;

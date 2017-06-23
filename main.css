@@ -48,7 +48,7 @@ img {
 	flex-flow: row wrap;
 	margin-bottom: 20px;
 	overflow: hidden;
-	width: 57%;
+	width: 50%;
 }
 .logo-wrap-img {
 	width: 100px;
@@ -60,7 +60,7 @@ img {
 	width: 100%;
 }
 .calc-header {
-	color: #a80040;
+	color: #cc0c0c;
 	/*font-family: 'Times New Roman';*/
 	font-size: 1.6rem;
 	margin: 0;
@@ -69,17 +69,14 @@ img {
 }
 .param-wrap {
 	/*border-radius: 10px;*/
-	-ms-align-items: flex-start;
-	align-items: flex-start;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
 	flex-flow: row wrap;
-	/*overflow: hidden;
-	margin-right: 3%;*/
-	width: 55%;
+	/*overflow: hidden;*/
+	width: 100%;
 }
 #selections {
 	border-radius: 10px 10px 0 0;
@@ -100,11 +97,11 @@ img {
 #selections select {
 	/*border: 2px solid #00a8a8;
 	border-radius: 10px;*/
-	font-size: 1rem;
+	font-size: 1.6rem;
 }
 #selections tr:last-child td {
 	
-	padding: 0;
+	padding: 30px 0 0;
 	
 }
 #selections tr:last-child td:last-child {
@@ -115,17 +112,17 @@ img {
 	width: 100%;
 }
 #selections tr:first-child {
-	background-color: #a80040;
+	background-color: #cc0c0c;
 }
 #selections tr:first-child th {
 	border: none;
 	color: #fff;
 }
-#selections tr:first-child th:first-child {
-	border-right: 1px solid #bebebe;
-	
+/*#selections tr:first-child td:first-child {
+	border: none;
+	border-radius: 10px 0 0 0;
 }
-/*#selections tr:first-child th:last-child {
+#selections tr:first-child th:last-child {
 	border-left: 1px solid #bebebe;
 	border-radius: 0 10px 0 0;
 }*/
@@ -151,31 +148,29 @@ img {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	justify-content: flex-start;
 	flex-flow: row wrap;
-	margin-top: 20px;
+	margin-top: 30px;
 	padding: 25px;
-	width: 100%;
-	
-}
-.param-hint-text {
 	width: 60%;
 }
+.param-hint-text {
+	width: 50%;
+}
 .param-hint-text p {
-	font-size: 1rem;
+	font-size: 1.4rem;
 }
 .param-hint-img {
-	width: 30%;
+	width: 40%;
 }
 .param-hint-img img {
 	width: 100%;
 }
 button#calc_button {
-	background-color: #a80040; /*#00a8a8;*/
+	background-color: #cc0c0c; /*#00a8a8;*/
 	border-radius: 10px;
 	
 	font-size: 1.6rem;
-	margin: 30px 0 0 0;
+	margin: auto;
 	padding: 10px 20px;
 	/*transition: all .2s ease-in-out;*/
 	width: 30%;
@@ -188,7 +183,9 @@ button#calc_button:active {
 	-webkit-box-shadow: 0px 0px 0px #555;
 	box-shadow: 0px 0px 0px #555;
 }
-
+.hidden-area {
+	display: none;
+}
 .result-wrap {
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -196,11 +193,11 @@ button#calc_button:active {
 	display: -o-flex;
 	display: flex;
 	flex-flow: row wrap;
-	/*margin-top: 50px;*/
+	margin-top: 50px;
 	width: 100%;
 }
 .buttons-table-wrap {
-	width: 100%;
+	width: 60%;
 }
 .buttons {
 	margin-left:auto;
@@ -218,7 +215,7 @@ button#calc_button:active {
 	width: 100%;
 }
 #switch-bg {
-	background-color: #a80040;
+	background-color: #cc0c0c;
 	border-radius: 10px 10px 0 0;
 	height: 100%;
 	left: 0;
@@ -231,7 +228,7 @@ button#calc_button:active {
 .switcher button#inches,
 .switcher button#mm {
 	background-color: transparent;
-	border: 2px solid #a80040;
+	border: 2px solid #cc0c0c;
 	
 	font-size: 1.4rem;
 	padding: 5px;
@@ -258,16 +255,16 @@ button#calc_button:active {
 }
 
 
-.calc-wrap table {
+table {
 	border-collapse: collapse;
-	font-size: 1rem;
+	font-size: 1.4rem;
 	width: 100%;
 }
 
 td, th {
 	border: 1px solid #BEBEBE;
 	
-	padding: 12px 10px;
+	padding: 8px 10px;
 	text-align: left;
 	/*width: 25%;*/
 }
@@ -278,14 +275,7 @@ th {
 	height: 80px;
 	text-align: center;
 }*/
-.result-area {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	flex-flow: row wrap;
-}
+
 
 #results {
 	border-radius: 0 0 10px 10px;
@@ -324,7 +314,7 @@ th {
 	width: 40%;
 }
 #results tr:first-child th {
-	background-color: #a80040;
+	background-color: #cc0c0c;
 	color: #fff;
 }
 #results tr:first-child th:last-child {
@@ -342,10 +332,7 @@ th {
 .img-wrap {
 	width: 50%;
 }
-.img-side {
-	margin: 0 0 0 35px;
-	width: 40%;
-}
+
 .img-wrap {
 	background:
     -webkit-linear-gradient(#e4b8d4, transparent 1px),
@@ -358,29 +345,19 @@ th {
     linear-gradient(to right, #e4b8d4, transparent 1px);
   	background-size: 15px 15px;
   	background-position: center center;
-  	-webkit-box-sizing: border-box;
-  	-moz-box-sizing: border-box;
-  	/*border-radius: 10px 10px 0 0;
-	-webkit-box-shadow: 5px 5px 20px #555;
-	box-shadow: 5px 5px 20px #555;*/
-  	box-sizing: border-box;
-  	padding: 2%;
-	width: 100%;
+  	margin: 0 0 0 35px;
+	width: 36%;
 }
 .img-wrap h2 {
-	font-size: 1.2rem;
 	margin: 0 0 45px 0;
 	padding: 0;
 	width: 100%;
-}
-.img-wrap .img-new h2 {
-	margin-bottom: 0;
 }
 .table-wrap {
 	margin-right: 4%;
 }
 .img-old {
-	margin-bottom: 55px;
+	margin-bottom: 25px;
 	/*padding-top: 50px;*/
 }
 .img-old,
@@ -417,16 +394,13 @@ th {
 	display: flex;
 	justify-content: center;
 	position: relative;
-	transition: all .5s ease-in-out
 }
 .disc {
 	background: url(images/disc.png) center center/ cover no-repeat;
-	transition: all .5s ease-in-out
 }
 .rubber_front {
 	background: url(images/rubber_front.png) center center/ 100% 100% no-repeat;
 	position: relative;
-	transition: all .5s ease-in-out
 }
 .dimension {
 	border: 1px solid #000;
@@ -484,34 +458,26 @@ th {
 	display: -o-flex;
 	display: flex;
 	flex-flow: row wrap;
-	margin-top: 15px;
-	width: 100%;
+	margin-top: 50px;
 }
 .speed-wrap {
-	
+
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
-	
-	padding: 15px;
-	width: 100%;
+	width: 50%;
 }
 .speed-wrap .speed-text {
-	font-size: 1rem;
-	padding: 0 0 10px 0;
+	font-size: 1.2rem;
 	text-align: center;
 	width: 50%;
 }
 .speedometer {
-	border-radius: 50%;
-	-webkit-box-shadow: 5px 5px 20px #555;
-	box-shadow: 5px 5px 20px #555;
 	position: relative;
-	width: 45%;
+	width: 50%;
 }
 
 .speedometer img:first-child {
@@ -519,21 +485,21 @@ th {
 	width: 100%;
 }
 .speedometer img:last-of-type {
-	left: 47.5%;
+	left: 46.5%;
 	position: absolute;
 	transform-origin: 50% 95.7%;
 	transition: all .5s ease-in-out;
-	top: 7%;
+	top: 13%;
 	width: 5%;
 }
 #device-value {
 	background-color: #f1f1f1;
-	font-size: 2rem;
+	font-size: 2.5rem;
 	text-align: center;
 	width: 70px;
 }
 #real-value {
-	font-size: 2rem;
+	font-size: 2.5rem;
 }
 button#up, button#down {
 	background-color: transparent;

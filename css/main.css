@@ -254,9 +254,9 @@ button#calc_button:active {
 	overflow: hidden;
 	width: 100%;
 }
-#results img {
+#results svg {
 	vertical-align: text-bottom;
-	width: 25px;
+	
 }
 #results th {
 	background-color: #F1F1F1;

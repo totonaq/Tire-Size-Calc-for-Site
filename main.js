@@ -176,16 +176,22 @@
 				 *diameter = this.imgWidth (default 200). Another
 				 *tire get scaled diameter
 				 */
+
 				this.scaledOldDiam = (this.oldDiam > this.newDiam) ? 
 					this.imgWidth : this.imgWidth / (this.newDiam / this.oldDiam);
 				this.scaledNewDiam = (this.oldDiam > this.newDiam) ? 
-				this.imgWidth / (this.oldDiam / this.newDiam) : this.imgWidth;
+					this.imgWidth / (this.oldDiam / this.newDiam) : this.imgWidth;
 
-				this.scaledOldWidth = this.oldWidth * this.scaledOldDiam / this.oldDiam;
-				this.scaledNewWidth = this.newWidth * this.scaledNewDiam / this.newDiam;
+				this.scaledOldWidth = this.oldWidth * 
+					this.scaledOldDiam / this.oldDiam;
+				this.scaledNewWidth = this.newWidth * 
+					this.scaledNewDiam / this.newDiam;
 
-				this.scaledOldDiscDiam = this.oldDiscDiamMM * this.scaledOldDiam / this.oldDiam;
-				this.scaledNewDiscDiam = this.newDiscDiamMM * this.scaledNewDiam / this.newDiam;
+
+				this.scaledOldDiscDiam = this.oldDiscDiamMM * 
+					this.scaledOldDiam / this.oldDiam;
+				this.scaledNewDiscDiam = this.newDiscDiamMM * 
+					this.scaledNewDiam / this.newDiam;
 			},
 
 			setImageParams: function() {
@@ -193,10 +199,8 @@
 				//to the wrapper layouts of tires
 				oldSide.style.width = newSide.style.width = 
 				oldSide.style.height = newSide.style.height = 
-				this.imgWidth + 'px';
-
 				oldFront.style.width = newFront.style.width =
-				this.imgWidth / 3 + 'px';
+				this.imgWidth + 'px';
 
 				//set dimensions of the old images
 				

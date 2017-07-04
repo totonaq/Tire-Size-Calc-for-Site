@@ -305,7 +305,7 @@ button#calc_button:active {
     linear-gradient(to right, #e4b8d4, transparent 1px);
   	background-size: 15px 15px;
   	background-position: center center;
-  	margin: 0 0 0 35px;
+  	margin: 0 0 0 45px;
 	width: 36%;
 }
 .img-wrap h2 {
@@ -358,6 +358,7 @@ button#calc_button:active {
 }
 .rubber_front {
 	background: url(../images/rubber_front.png) center center/ 100% 100% no-repeat;
+	margin-left: 100px;
 	position: relative;
 }
 .rubber_side,
